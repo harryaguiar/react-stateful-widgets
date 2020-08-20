@@ -48,26 +48,27 @@ export default function Input() {
 
     console.log(evt);
     /* STEP 4 */
-    value = inputValue;
+    setInputValue(value);
   };
   const reset = () => {
     /* STEP 5 */
-    useState('');
+    setInputValue('');
 
   };
 
   const style = {
     fontSize: '1.5em',
     marginBottom: '0.3em',
-    color: inputValue > 10 ? 'crimson' : 'royalblue', /* STEP 2 */
+    color: inputValue.length > 10 ? 'crimson' : 'royalblue', /* STEP 2 */
+    text: 'capitalize'
   };
 
   return (
     <div className='widget-input container'>
       <h2>Input</h2>
-      <div style={style}></div> {/* STEP 3 */}
+      <div style={style}>{inputValue}</div> {/* STEP 3 */}
       <div>
-        <input type='text' onChange={changeInput} setInputValue={inputValue}/> {/* STEP 6 */}
+        <input type='text' onChange={changeInput} value={inputValue}/> {/* STEP 6 */}
         <button onClick={reset}>Reset</button>
       </div>
     </div>
