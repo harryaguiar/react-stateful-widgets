@@ -38,7 +38,7 @@ STEP 4:
 */
 
 import React, { useState } from 'react'; /* STEP 0 */
-import ReactDOM from "react-dom";
+
 
 export default function Spinner() {
   /* STEP 1 */
